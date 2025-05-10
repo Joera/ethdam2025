@@ -1,0 +1,9 @@
+{
+    "db_gateway": "https://orbis-read.transport-union.dev",
+    "assets_gateway": "https://neutralpress.mypinata.cloud",
+    "data_gateway": "https://ipfs.transport-union.dev",
+    "chain_id": 84532,
+    "rpc_url": "https://base-sepolia.g.alchemy.com/v2/DAfzjixY82ICdLCssh_dTQpoN0I2mthW",
+    "db_model": "kjzl6hvfrbw6c6e9eclzogbqh9uykyh7zi9fn73kccfu2zcwlrczc0feindiz6y",
+    "db_context": "kjzl6kcym7w8ya9eooishoahx3dehdyzticwolc95udtobxcnpk3m3zrpf5o4fa"
+}

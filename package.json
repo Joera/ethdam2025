@@ -1,0 +1,6 @@
+{
+	"dependencies": {
+		"@safe-global/protocol-kit": "^6.0.3",
+		"@safe-global/safe-service-client": "^2.0.3"
+	}
+}
