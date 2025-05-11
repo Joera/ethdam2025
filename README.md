@@ -200,4 +200,4 @@ to do ......
 
 ### Factory
 
-[Deployed factory to create trustfunds](https://gnosisscan.io/address/0x274230EbcA7Aae91a655dd72c2B317F7615875c9#code)
+[Deployed factory to create trustfunds](https://gnosisscan.io/address/0xA6e7157380F562f796f30D3AD0A58dBAB1B36e07#code)
