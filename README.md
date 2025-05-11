@@ -88,7 +88,7 @@ function passesMembershipCondition(address _avatar) external view returns (bool)
 }
 ```
 
-[View code](contracts/sol/implementations/TrustedByFour.sol)
+[View code](custom-contracts/sol/implementations/TrustedByFour.sol)
 
 ### Making the contribution
 
@@ -114,7 +114,7 @@ try {
 }
 ```
 
-Link: frontend/src/lib/factory/groupMint.ts
+[View code](frontend/src/lib/factory/groupMint.ts)
 
 The group contract has been optimized for this use case by inserting a pre-deployed CustomMintPolicy contract with a hook to insert code before the group token is minted. In this hook we attempt to transfer the contribution in stablecoins from the member's safe into the group treasury. Only when this transfer is successful, the group token is minted. The newly minted group token is owned by the member safe and functions as proof of contribution. First time contributors also pay a deposit of one extra month to cover for a possible missed payment.
 
@@ -157,7 +157,7 @@ function beforeMintPolicy(
 ```
 
 
-Link: contracts/sol/implementations/CustomMintPolicy.sol
+[View code](custom-contracts/sol/implementations/CustomMintPolicy.sol)
 
 ### Tracking contributions
 
