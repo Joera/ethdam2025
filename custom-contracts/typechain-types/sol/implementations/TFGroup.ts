@@ -27,22 +27,31 @@ export interface TFGroupInterface extends Interface {
   getFunction(
     nameOrSignature:
       | "BASE_MINT_HANDLER"
-      | "BASE_MINT_POLICY"
       | "BASE_TREASURY"
+      | "CONTRIBUTION_AMOUNT"
       | "HUB"
       | "LIFT_ERC20"
       | "MAX_CONDITIONS"
       | "NAME_REGISTRY"
+      | "PAYOUT_DAY"
+      | "checkUpkeep"
+      | "eureToken"
       | "feeCollection"
       | "getMembershipConditions"
+      | "getTrustedAvatars"
+      | "lastTriggerTimestamp"
       | "membershipConditions"
+      | "mintPolicy"
       | "owner"
+      | "performUpkeep"
       | "registerShortNameWithNonce"
       | "service"
       | "setFeeCollection"
       | "setMembershipCondition"
       | "setOwner"
       | "setService"
+      | "stableCoinToken"
+      | "timestampToDate"
       | "trust"
       | "trustBatchWithConditions"
       | "updateMetadataDigest"
@@ -53,6 +62,7 @@ export interface TFGroupInterface extends Interface {
       | "FeeCollectionUpdated"
       | "MembershipConditionEnabled"
       | "OwnerUpdated"
+      | "PayoutTriggered"
       | "ServiceUpdated"
   ): EventFragment;
 
@@ -61,11 +71,11 @@ export interface TFGroupInterface extends Interface {
     values?: undefined
   ): string;
   encodeFunctionData(
-    functionFragment: "BASE_MINT_POLICY",
+    functionFragment: "BASE_TREASURY",
     values?: undefined
   ): string;
   encodeFunctionData(
-    functionFragment: "BASE_TREASURY",
+    functionFragment: "CONTRIBUTION_AMOUNT",
     values?: undefined
   ): string;
   encodeFunctionData(functionFragment: "HUB", values?: undefined): string;
@@ -82,6 +92,15 @@ export interface TFGroupInterface extends Interface {
     values?: undefined
   ): string;
   encodeFunctionData(
+    functionFragment: "PAYOUT_DAY",
+    values?: undefined
+  ): string;
+  encodeFunctionData(
+    functionFragment: "checkUpkeep",
+    values: [BytesLike]
+  ): string;
+  encodeFunctionData(functionFragment: "eureToken", values?: undefined): string;
+  encodeFunctionData(
     functionFragment: "feeCollection",
     values?: undefined
   ): string;
@@ -90,10 +109,26 @@ export interface TFGroupInterface extends Interface {
     values?: undefined
   ): string;
   encodeFunctionData(
+    functionFragment: "getTrustedAvatars",
+    values?: undefined
+  ): string;
+  encodeFunctionData(
+    functionFragment: "lastTriggerTimestamp",
+    values?: undefined
+  ): string;
+  encodeFunctionData(
     functionFragment: "membershipConditions",
     values: [BigNumberish]
   ): string;
+  encodeFunctionData(
+    functionFragment: "mintPolicy",
+    values?: undefined
+  ): string;
   encodeFunctionData(functionFragment: "owner", values?: undefined): string;
+  encodeFunctionData(
+    functionFragment: "performUpkeep",
+    values: [BytesLike]
+  ): string;
   encodeFunctionData(
     functionFragment: "registerShortNameWithNonce",
     values: [BigNumberish]
@@ -116,6 +151,14 @@ export interface TFGroupInterface extends Interface {
     values: [AddressLike]
   ): string;
   encodeFunctionData(
+    functionFragment: "stableCoinToken",
+    values?: undefined
+  ): string;
+  encodeFunctionData(
+    functionFragment: "timestampToDate",
+    values: [BigNumberish]
+  ): string;
+  encodeFunctionData(
     functionFragment: "trust",
     values: [AddressLike, BigNumberish]
   ): string;
@@ -133,11 +176,11 @@ export interface TFGroupInterface extends Interface {
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "BASE_MINT_POLICY",
+    functionFragment: "BASE_TREASURY",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "BASE_TREASURY",
+    functionFragment: "CONTRIBUTION_AMOUNT",
     data: BytesLike
   ): Result;
   decodeFunctionResult(functionFragment: "HUB", data: BytesLike): Result;
@@ -150,6 +193,12 @@ export interface TFGroupInterface extends Interface {
     functionFragment: "NAME_REGISTRY",
     data: BytesLike
   ): Result;
+  decodeFunctionResult(functionFragment: "PAYOUT_DAY", data: BytesLike): Result;
+  decodeFunctionResult(
+    functionFragment: "checkUpkeep",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(functionFragment: "eureToken", data: BytesLike): Result;
   decodeFunctionResult(
     functionFragment: "feeCollection",
     data: BytesLike
@@ -159,10 +208,23 @@ export interface TFGroupInterface extends Interface {
     data: BytesLike
   ): Result;
   decodeFunctionResult(
+    functionFragment: "getTrustedAvatars",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "lastTriggerTimestamp",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
     functionFragment: "membershipConditions",
     data: BytesLike
   ): Result;
+  decodeFunctionResult(functionFragment: "mintPolicy", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "owner", data: BytesLike): Result;
+  decodeFunctionResult(
+    functionFragment: "performUpkeep",
+    data: BytesLike
+  ): Result;
   decodeFunctionResult(
     functionFragment: "registerShortNameWithNonce",
     data: BytesLike
@@ -178,6 +240,14 @@ export interface TFGroupInterface extends Interface {
   ): Result;
   decodeFunctionResult(functionFragment: "setOwner", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "setService", data: BytesLike): Result;
+  decodeFunctionResult(
+    functionFragment: "stableCoinToken",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "timestampToDate",
+    data: BytesLike
+  ): Result;
   decodeFunctionResult(functionFragment: "trust", data: BytesLike): Result;
   decodeFunctionResult(
     functionFragment: "trustBatchWithConditions",
@@ -219,6 +289,28 @@ export namespace OwnerUpdatedEvent {
   export type OutputTuple = [owner: string];
   export interface OutputObject {
     owner: string;
+  }
+  export type Event = TypedContractEvent<InputTuple, OutputTuple, OutputObject>;
+  export type Filter = TypedDeferredTopicFilter<Event>;
+  export type Log = TypedEventLog<Event>;
+  export type LogDescription = TypedLogDescription<Event>;
+}
+
+export namespace PayoutTriggeredEvent {
+  export type InputTuple = [
+    recipient: AddressLike,
+    amount: BigNumberish,
+    timestamp: BigNumberish
+  ];
+  export type OutputTuple = [
+    recipient: string,
+    amount: bigint,
+    timestamp: bigint
+  ];
+  export interface OutputObject {
+    recipient: string;
+    amount: bigint;
+    timestamp: bigint;
   }
   export type Event = TypedContractEvent<InputTuple, OutputTuple, OutputObject>;
   export type Filter = TypedDeferredTopicFilter<Event>;
@@ -283,9 +375,9 @@ export interface TFGroup extends BaseContract {
 
   BASE_MINT_HANDLER: TypedContractMethod<[], [string], "view">;
 
-  BASE_MINT_POLICY: TypedContractMethod<[], [string], "view">;
-
   BASE_TREASURY: TypedContractMethod<[], [string], "view">;
+
+  CONTRIBUTION_AMOUNT: TypedContractMethod<[], [bigint], "view">;
 
   HUB: TypedContractMethod<[], [string], "view">;
 
@@ -295,9 +387,23 @@ export interface TFGroup extends BaseContract {
 
   NAME_REGISTRY: TypedContractMethod<[], [string], "view">;
 
+  PAYOUT_DAY: TypedContractMethod<[], [bigint], "view">;
+
+  checkUpkeep: TypedContractMethod<
+    [arg0: BytesLike],
+    [[boolean, string] & { upkeepNeeded: boolean }],
+    "view"
+  >;
+
+  eureToken: TypedContractMethod<[], [string], "view">;
+
   feeCollection: TypedContractMethod<[], [string], "view">;
 
   getMembershipConditions: TypedContractMethod<[], [string[]], "view">;
+
+  getTrustedAvatars: TypedContractMethod<[], [string[]], "view">;
+
+  lastTriggerTimestamp: TypedContractMethod<[], [bigint], "view">;
 
   membershipConditions: TypedContractMethod<
     [arg0: BigNumberish],
@@ -305,7 +411,11 @@ export interface TFGroup extends BaseContract {
     "view"
   >;
 
+  mintPolicy: TypedContractMethod<[], [string], "view">;
+
   owner: TypedContractMethod<[], [string], "view">;
+
+  performUpkeep: TypedContractMethod<[arg0: BytesLike], [void], "nonpayable">;
 
   registerShortNameWithNonce: TypedContractMethod<
     [_nonce: BigNumberish],
@@ -335,6 +445,14 @@ export interface TFGroup extends BaseContract {
     "nonpayable"
   >;
 
+  stableCoinToken: TypedContractMethod<[], [string], "view">;
+
+  timestampToDate: TypedContractMethod<
+    [timestamp: BigNumberish],
+    [[bigint, bigint, bigint] & { year: bigint; month: bigint; day: bigint }],
+    "view"
+  >;
+
   trust: TypedContractMethod<
     [_trustReceiver: AddressLike, _expiry: BigNumberish],
     [void],
@@ -361,11 +479,11 @@ export interface TFGroup extends BaseContract {
     nameOrSignature: "BASE_MINT_HANDLER"
   ): TypedContractMethod<[], [string], "view">;
   getFunction(
-    nameOrSignature: "BASE_MINT_POLICY"
-  ): TypedContractMethod<[], [string], "view">;
-  getFunction(
     nameOrSignature: "BASE_TREASURY"
   ): TypedContractMethod<[], [string], "view">;
+  getFunction(
+    nameOrSignature: "CONTRIBUTION_AMOUNT"
+  ): TypedContractMethod<[], [bigint], "view">;
   getFunction(
     nameOrSignature: "HUB"
   ): TypedContractMethod<[], [string], "view">;
@@ -379,17 +497,42 @@ export interface TFGroup extends BaseContract {
     nameOrSignature: "NAME_REGISTRY"
   ): TypedContractMethod<[], [string], "view">;
   getFunction(
+    nameOrSignature: "PAYOUT_DAY"
+  ): TypedContractMethod<[], [bigint], "view">;
+  getFunction(
+    nameOrSignature: "checkUpkeep"
+  ): TypedContractMethod<
+    [arg0: BytesLike],
+    [[boolean, string] & { upkeepNeeded: boolean }],
+    "view"
+  >;
+  getFunction(
+    nameOrSignature: "eureToken"
+  ): TypedContractMethod<[], [string], "view">;
+  getFunction(
     nameOrSignature: "feeCollection"
   ): TypedContractMethod<[], [string], "view">;
   getFunction(
     nameOrSignature: "getMembershipConditions"
   ): TypedContractMethod<[], [string[]], "view">;
   getFunction(
+    nameOrSignature: "getTrustedAvatars"
+  ): TypedContractMethod<[], [string[]], "view">;
+  getFunction(
+    nameOrSignature: "lastTriggerTimestamp"
+  ): TypedContractMethod<[], [bigint], "view">;
+  getFunction(
     nameOrSignature: "membershipConditions"
   ): TypedContractMethod<[arg0: BigNumberish], [string], "view">;
   getFunction(
+    nameOrSignature: "mintPolicy"
+  ): TypedContractMethod<[], [string], "view">;
+  getFunction(
     nameOrSignature: "owner"
   ): TypedContractMethod<[], [string], "view">;
+  getFunction(
+    nameOrSignature: "performUpkeep"
+  ): TypedContractMethod<[arg0: BytesLike], [void], "nonpayable">;
   getFunction(
     nameOrSignature: "registerShortNameWithNonce"
   ): TypedContractMethod<[_nonce: BigNumberish], [void], "nonpayable">;
@@ -412,6 +555,16 @@ export interface TFGroup extends BaseContract {
   getFunction(
     nameOrSignature: "setService"
   ): TypedContractMethod<[_service: AddressLike], [void], "nonpayable">;
+  getFunction(
+    nameOrSignature: "stableCoinToken"
+  ): TypedContractMethod<[], [string], "view">;
+  getFunction(
+    nameOrSignature: "timestampToDate"
+  ): TypedContractMethod<
+    [timestamp: BigNumberish],
+    [[bigint, bigint, bigint] & { year: bigint; month: bigint; day: bigint }],
+    "view"
+  >;
   getFunction(
     nameOrSignature: "trust"
   ): TypedContractMethod<
@@ -450,6 +603,13 @@ export interface TFGroup extends BaseContract {
     OwnerUpdatedEvent.InputTuple,
     OwnerUpdatedEvent.OutputTuple,
     OwnerUpdatedEvent.OutputObject
+  >;
+  getEvent(
+    key: "PayoutTriggered"
+  ): TypedContractEvent<
+    PayoutTriggeredEvent.InputTuple,
+    PayoutTriggeredEvent.OutputTuple,
+    PayoutTriggeredEvent.OutputObject
   >;
   getEvent(
     key: "ServiceUpdated"
@@ -491,6 +651,17 @@ export interface TFGroup extends BaseContract {
       OwnerUpdatedEvent.InputTuple,
       OwnerUpdatedEvent.OutputTuple,
       OwnerUpdatedEvent.OutputObject
+    >;
+
+    "PayoutTriggered(address,uint256,uint256)": TypedContractEvent<
+      PayoutTriggeredEvent.InputTuple,
+      PayoutTriggeredEvent.OutputTuple,
+      PayoutTriggeredEvent.OutputObject
+    >;
+    PayoutTriggered: TypedContractEvent<
+      PayoutTriggeredEvent.InputTuple,
+      PayoutTriggeredEvent.OutputTuple,
+      PayoutTriggeredEvent.OutputObject
     >;
 
     "ServiceUpdated(address)": TypedContractEvent<

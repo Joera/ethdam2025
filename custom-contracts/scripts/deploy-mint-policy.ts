@@ -4,8 +4,9 @@ import { run } from "hardhat";
 async function main() {
   console.log("Deploying CustomMintPolicy...");
 
+  const EURE_TOKEN_ADDRESS = '0xcB444e90D8198415266c6a2724b7900fb12FC56E'; // Gnosis Chain EURE token
   const CustomMintPolicy = await ethers.getContractFactory("CustomMintPolicy");
-  const mintPolicy = await CustomMintPolicy.deploy();
+  const mintPolicy = await CustomMintPolicy.deploy(EURE_TOKEN_ADDRESS);
   await mintPolicy.waitForDeployment();
 
   const mintPolicyAddress = await mintPolicy.getAddress();
@@ -20,7 +21,7 @@ async function main() {
     console.log("Verifying CustomMintPolicy on Etherscan...");
     await run("verify:verify", {
       address: mintPolicyAddress,
-      constructorArguments: [],
+      constructorArguments: [EURE_TOKEN_ADDRESS],
     });
     console.log("CustomMintPolicy verified successfully");
   } catch (error) {

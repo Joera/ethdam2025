@@ -1,13 +1,14 @@
 {
   "_format": "hh-sol-cache-2",
   "files": {
-    "/home/joera/Documents/ethdam2025/contracts/sol/base/Circle.sol": {
+    "/home/joera/Documents/ethdam2025/custom-contracts/sol/base/Circle.sol": {
       "lastModificationDate": 1746784398318,
       "contentHash": "61e379fc83af89638b0203030d8a8fed",
       "sourceName": "sol/base/Circle.sol",
       "solcConfig": {
         "version": "0.8.28",
         "settings": {
+          "viaIR": true,
           "optimizer": {
             "enabled": true,
             "runs": 200
@@ -39,13 +40,14 @@
         "Circle"
       ]
     },
-    "/home/joera/Documents/ethdam2025/contracts/sol/interfaces/ICircle.sol": {
+    "/home/joera/Documents/ethdam2025/custom-contracts/sol/interfaces/ICircle.sol": {
       "lastModificationDate": 1746784398323,
       "contentHash": "a869f31f9870b1c115f70790d931e531",
       "sourceName": "sol/interfaces/ICircle.sol",
       "solcConfig": {
         "version": "0.8.28",
         "settings": {
+          "viaIR": true,
           "optimizer": {
             "enabled": true,
             "runs": 200
@@ -75,238 +77,14 @@
         "ICircle"
       ]
     },
-    "/home/joera/Documents/ethdam2025/contracts/sol/implementations/CustomMintPolicy.sol": {
-      "lastModificationDate": 1746784398320,
-      "contentHash": "7f77719f840fc11374813896c52454e3",
-      "sourceName": "sol/implementations/CustomMintPolicy.sol",
-      "solcConfig": {
-        "version": "0.8.28",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "evmVersion": "cancun",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "../../circles-groups/src/base-group/BaseMintPolicy.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.28"
-      ],
-      "artifacts": [
-        "CustomMintPolicy"
-      ]
-    },
-    "/home/joera/Documents/ethdam2025/contracts/circles-groups/src/base-group/BaseMintPolicy.sol": {
-      "lastModificationDate": 1746782069806,
-      "contentHash": "670b6167f735971134bcd92130849199",
-      "sourceName": "circles-groups/src/base-group/BaseMintPolicy.sol",
-      "solcConfig": {
-        "version": "0.8.28",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "evmVersion": "cancun",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        ">=0.8.28"
-      ],
-      "artifacts": [
-        "BaseMintPolicy"
-      ]
-    },
-    "/home/joera/Documents/ethdam2025/contracts/sol/implementations/CustomTreasury.sol": {
-      "lastModificationDate": 1746879208337,
-      "contentHash": "8dabb3e289cad4f1808723f95ef4f318",
-      "sourceName": "sol/implementations/CustomTreasury.sol",
-      "solcConfig": {
-        "version": "0.8.28",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "evmVersion": "cancun",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [],
-      "artifacts": []
-    },
-    "/home/joera/Documents/ethdam2025/contracts/sol/implementations/TFGroup.sol": {
-      "lastModificationDate": 1746878548174,
-      "contentHash": "f3796c36c8958d5742cdf3e612d2333d",
-      "sourceName": "sol/implementations/TFGroup.sol",
-      "solcConfig": {
-        "version": "0.8.28",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "evmVersion": "cancun",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "../../circles-groups/src/base-group/BaseTreasury.sol",
-        "../../circles-groups/src/base-group/BaseMintHandler.sol",
-        "../../circles-groups/src/base-group/interfaces/IHub.sol",
-        "../../circles-groups/src/base-group/interfaces/ILiftERC20.sol",
-        "../../circles-groups/src/base-group/interfaces/INameRegistry.sol",
-        "../../circles-groups/src/membership-conditions/IMembershipCondition.sol"
-      ],
-      "versionPragmas": [
-        ">=0.8.28"
-      ],
-      "artifacts": [
-        "TFGroup"
-      ]
-    },
-    "/home/joera/Documents/ethdam2025/contracts/circles-groups/src/base-group/BaseTreasury.sol": {
-      "lastModificationDate": 1746878796700,
-      "contentHash": "177c341f4ad9fe27795601bd2054e181",
-      "sourceName": "circles-groups/src/base-group/BaseTreasury.sol",
-      "solcConfig": {
-        "version": "0.8.28",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "evmVersion": "cancun",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "@openzeppelin/contracts/token/ERC1155/utils/ERC1155Holder.sol",
-        "./interfaces/IHub.sol",
-        "./interfaces/INameRegistry.sol"
-      ],
-      "versionPragmas": [
-        ">=0.8.28"
-      ],
-      "artifacts": [
-        "BaseTreasury"
-      ]
-    },
-    "/home/joera/Documents/ethdam2025/contracts/circles-groups/src/membership-conditions/IMembershipCondition.sol": {
-      "lastModificationDate": 1746782069809,
-      "contentHash": "063438d754f24af7cfa48b4686ddf394",
-      "sourceName": "circles-groups/src/membership-conditions/IMembershipCondition.sol",
-      "solcConfig": {
-        "version": "0.8.28",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "evmVersion": "cancun",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        ">=0.8.28"
-      ],
-      "artifacts": [
-        "IMembershipCondition"
-      ]
-    },
-    "/home/joera/Documents/ethdam2025/contracts/circles-groups/src/base-group/BaseMintHandler.sol": {
-      "lastModificationDate": 1746878839890,
+    "/home/joera/Documents/ethdam2025/custom-contracts/sol/base-group/BaseMintHandler.sol": {
+      "lastModificationDate": 1746938939837,
       "contentHash": "26ef4e8cad102ba096c0aa7a37094c5b",
-      "sourceName": "circles-groups/src/base-group/BaseMintHandler.sol",
+      "sourceName": "sol/base-group/BaseMintHandler.sol",
       "solcConfig": {
         "version": "0.8.28",
         "settings": {
+          "viaIR": true,
           "optimizer": {
             "enabled": true,
             "runs": 200
@@ -341,85 +119,14 @@
         "BaseMintHandler"
       ]
     },
-    "/home/joera/Documents/ethdam2025/contracts/circles-groups/src/base-group/interfaces/ILiftERC20.sol": {
-      "lastModificationDate": 1746782069807,
-      "contentHash": "4b044e1ac252b3afd73fa3535c7a70ca",
-      "sourceName": "circles-groups/src/base-group/interfaces/ILiftERC20.sol",
-      "solcConfig": {
-        "version": "0.8.28",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "evmVersion": "cancun",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        ">=0.8.28"
-      ],
-      "artifacts": [
-        "ILiftERC20"
-      ]
-    },
-    "/home/joera/Documents/ethdam2025/contracts/circles-groups/src/base-group/interfaces/INameRegistry.sol": {
-      "lastModificationDate": 1746782069807,
-      "contentHash": "d43ec9790181b879a32b9c198eac0fa9",
-      "sourceName": "circles-groups/src/base-group/interfaces/INameRegistry.sol",
-      "solcConfig": {
-        "version": "0.8.28",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "evmVersion": "cancun",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        ">=0.8.28"
-      ],
-      "artifacts": [
-        "INameRegistry"
-      ]
-    },
-    "/home/joera/Documents/ethdam2025/contracts/circles-groups/src/base-group/interfaces/IHub.sol": {
-      "lastModificationDate": 1746782069807,
+    "/home/joera/Documents/ethdam2025/custom-contracts/sol/base-group/interfaces/IHub.sol": {
+      "lastModificationDate": 1746938619998,
       "contentHash": "26cf95963fa58f1b4f57b50c9754b1f2",
-      "sourceName": "circles-groups/src/base-group/interfaces/IHub.sol",
+      "sourceName": "sol/base-group/interfaces/IHub.sol",
       "solcConfig": {
         "version": "0.8.28",
         "settings": {
+          "viaIR": true,
           "optimizer": {
             "enabled": true,
             "runs": 200
@@ -449,13 +156,51 @@
         "IHub"
       ]
     },
-    "/home/joera/Documents/ethdam2025/contracts/node_modules/.pnpm/@openzeppelin+contracts@5.3.0/node_modules/@openzeppelin/contracts/token/ERC1155/utils/ERC1155Holder.sol": {
-      "lastModificationDate": 1746878620505,
+    "/home/joera/Documents/ethdam2025/custom-contracts/sol/base-group/interfaces/INameRegistry.sol": {
+      "lastModificationDate": 1746938620004,
+      "contentHash": "d43ec9790181b879a32b9c198eac0fa9",
+      "sourceName": "sol/base-group/interfaces/INameRegistry.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "viaIR": true,
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "cancun",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.8.28"
+      ],
+      "artifacts": [
+        "INameRegistry"
+      ]
+    },
+    "/home/joera/Documents/ethdam2025/custom-contracts/node_modules/@openzeppelin/contracts/token/ERC1155/utils/ERC1155Holder.sol": {
+      "lastModificationDate": 1746940430184,
       "contentHash": "2d5c4c9aa5ff17fc77d595a1915d9d4e",
       "sourceName": "@openzeppelin/contracts/token/ERC1155/utils/ERC1155Holder.sol",
       "solcConfig": {
         "version": "0.8.28",
         "settings": {
+          "viaIR": true,
           "optimizer": {
             "enabled": true,
             "runs": 200
@@ -488,13 +233,51 @@
         "ERC1155Holder"
       ]
     },
-    "/home/joera/Documents/ethdam2025/contracts/node_modules/.pnpm/@openzeppelin+contracts@5.3.0/node_modules/@openzeppelin/contracts/utils/introspection/ERC165.sol": {
-      "lastModificationDate": 1746878620505,
+    "/home/joera/Documents/ethdam2025/custom-contracts/node_modules/@openzeppelin/contracts/token/ERC20/IERC20.sol": {
+      "lastModificationDate": 1746940430276,
+      "contentHash": "8f19f64d2adadf448840908bbaf431c8",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "viaIR": true,
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "cancun",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "IERC20"
+      ]
+    },
+    "/home/joera/Documents/ethdam2025/custom-contracts/node_modules/@openzeppelin/contracts/utils/introspection/ERC165.sol": {
+      "lastModificationDate": 1746940430190,
       "contentHash": "7c03c1e37c3dc24eafb76dc2b8a5c3a6",
       "sourceName": "@openzeppelin/contracts/utils/introspection/ERC165.sol",
       "solcConfig": {
         "version": "0.8.28",
         "settings": {
+          "viaIR": true,
           "optimizer": {
             "enabled": true,
             "runs": 200
@@ -526,13 +309,14 @@
         "ERC165"
       ]
     },
-    "/home/joera/Documents/ethdam2025/contracts/node_modules/.pnpm/@openzeppelin+contracts@5.3.0/node_modules/@openzeppelin/contracts/token/ERC1155/IERC1155Receiver.sol": {
-      "lastModificationDate": 1746878620505,
+    "/home/joera/Documents/ethdam2025/custom-contracts/node_modules/@openzeppelin/contracts/token/ERC1155/IERC1155Receiver.sol": {
+      "lastModificationDate": 1746940430271,
       "contentHash": "a1c249dfb5f349be0b4fc85e635dfd59",
       "sourceName": "@openzeppelin/contracts/token/ERC1155/IERC1155Receiver.sol",
       "solcConfig": {
         "version": "0.8.28",
         "settings": {
+          "viaIR": true,
           "optimizer": {
             "enabled": true,
             "runs": 200
@@ -564,13 +348,14 @@
         "IERC1155Receiver"
       ]
     },
-    "/home/joera/Documents/ethdam2025/contracts/node_modules/.pnpm/@openzeppelin+contracts@5.3.0/node_modules/@openzeppelin/contracts/utils/introspection/IERC165.sol": {
-      "lastModificationDate": 1746878620505,
+    "/home/joera/Documents/ethdam2025/custom-contracts/node_modules/@openzeppelin/contracts/utils/introspection/IERC165.sol": {
+      "lastModificationDate": 1746940430274,
       "contentHash": "bf0119eb2a570f219729ff38b6cd1df8",
       "sourceName": "@openzeppelin/contracts/utils/introspection/IERC165.sol",
       "solcConfig": {
         "version": "0.8.28",
         "settings": {
+          "viaIR": true,
           "optimizer": {
             "enabled": true,
             "runs": 200
@@ -600,13 +385,101 @@
         "IERC165"
       ]
     },
-    "/home/joera/Documents/ethdam2025/contracts/node_modules/.pnpm/@openzeppelin+contracts@5.3.0/node_modules/@openzeppelin/contracts/token/ERC20/IERC20.sol": {
-      "lastModificationDate": 1746878620505,
-      "contentHash": "8f19f64d2adadf448840908bbaf431c8",
-      "sourceName": "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+    "/home/joera/Documents/ethdam2025/custom-contracts/sol/implementations/TFGroup.sol": {
+      "lastModificationDate": 1746941450941,
+      "contentHash": "6e703f45cef68dc437cdcbdcfad94307",
+      "sourceName": "sol/implementations/TFGroup.sol",
       "solcConfig": {
         "version": "0.8.28",
         "settings": {
+          "viaIR": true,
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "cancun",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../base-group/BaseTreasury.sol",
+        "../base-group/BaseMintHandler.sol",
+        "../base-group/interfaces/IHub.sol",
+        "../base-group/interfaces/ILiftERC20.sol",
+        "../base-group/interfaces/INameRegistry.sol",
+        "../membership-conditions/IMembershipCondition.sol",
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "./CustomMintPolicy.sol"
+      ],
+      "versionPragmas": [
+        ">=0.8.28"
+      ],
+      "artifacts": [
+        "TFGroup"
+      ]
+    },
+    "/home/joera/Documents/ethdam2025/custom-contracts/sol/base-group/BaseTreasury.sol": {
+      "lastModificationDate": 1746938975615,
+      "contentHash": "177c341f4ad9fe27795601bd2054e181",
+      "sourceName": "sol/base-group/BaseTreasury.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "viaIR": true,
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "cancun",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC1155/utils/ERC1155Holder.sol",
+        "./interfaces/IHub.sol",
+        "./interfaces/INameRegistry.sol"
+      ],
+      "versionPragmas": [
+        ">=0.8.28"
+      ],
+      "artifacts": [
+        "BaseTreasury"
+      ]
+    },
+    "/home/joera/Documents/ethdam2025/custom-contracts/sol/base-group/interfaces/ILiftERC20.sol": {
+      "lastModificationDate": 1746938620001,
+      "contentHash": "4b044e1ac252b3afd73fa3535c7a70ca",
+      "sourceName": "sol/base-group/interfaces/ILiftERC20.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "viaIR": true,
           "optimizer": {
             "enabled": true,
             "runs": 200
@@ -630,19 +503,642 @@
       },
       "imports": [],
       "versionPragmas": [
+        ">=0.8.28"
+      ],
+      "artifacts": [
+        "ILiftERC20"
+      ]
+    },
+    "/home/joera/Documents/ethdam2025/custom-contracts/sol/membership-conditions/IMembershipCondition.sol": {
+      "lastModificationDate": 1746938620007,
+      "contentHash": "063438d754f24af7cfa48b4686ddf394",
+      "sourceName": "sol/membership-conditions/IMembershipCondition.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "viaIR": true,
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "cancun",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.8.28"
+      ],
+      "artifacts": [
+        "IMembershipCondition"
+      ]
+    },
+    "/home/joera/Documents/ethdam2025/custom-contracts/sol/implementations/CustomMintPolicy.sol": {
+      "lastModificationDate": 1746941674873,
+      "contentHash": "500d8711f50b40c7aef266ca56938fbd",
+      "sourceName": "sol/implementations/CustomMintPolicy.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "viaIR": true,
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "cancun",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../base-group/BaseMintPolicy.sol",
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "../hub/IHub.sol",
+        "./TFGroup.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "CustomMintPolicy"
+      ]
+    },
+    "/home/joera/Documents/ethdam2025/custom-contracts/sol/base-group/BaseMintPolicy.sol": {
+      "lastModificationDate": 1746938477226,
+      "contentHash": "670b6167f735971134bcd92130849199",
+      "sourceName": "sol/base-group/BaseMintPolicy.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "viaIR": true,
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "cancun",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.8.28"
+      ],
+      "artifacts": [
+        "BaseMintPolicy"
+      ]
+    },
+    "/home/joera/Documents/ethdam2025/custom-contracts/sol/hub/IHub.sol": {
+      "lastModificationDate": 1746939938571,
+      "contentHash": "d7d6f4ee246a2c16194e38b6cc95dd33",
+      "sourceName": "sol/hub/IHub.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "viaIR": true,
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "cancun",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC1155/IERC1155.sol",
+        "../circles/ICircles.sol",
+        "./TypeDefinitions.sol"
+      ],
+      "versionPragmas": [
+        ">=0.8.24"
+      ],
+      "artifacts": [
+        "IHubV2"
+      ]
+    },
+    "/home/joera/Documents/ethdam2025/custom-contracts/sol/circles/ICircles.sol": {
+      "lastModificationDate": 1746939927732,
+      "contentHash": "7e41bdff1d74c0fc6cb58358c3e5f2a5",
+      "sourceName": "sol/circles/ICircles.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "viaIR": true,
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "cancun",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IDemurrage.sol"
+      ],
+      "versionPragmas": [
+        ">=0.8.24"
+      ],
+      "artifacts": [
+        "ICircles"
+      ]
+    },
+    "/home/joera/Documents/ethdam2025/custom-contracts/sol/hub/TypeDefinitions.sol": {
+      "lastModificationDate": 1746939075575,
+      "contentHash": "73448d577304cf66ab7b258abad193a9",
+      "sourceName": "sol/hub/TypeDefinitions.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "viaIR": true,
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "cancun",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.8.24"
+      ],
+      "artifacts": [
+        "TypeDefinitions"
+      ]
+    },
+    "/home/joera/Documents/ethdam2025/custom-contracts/node_modules/@openzeppelin/contracts/token/ERC1155/IERC1155.sol": {
+      "lastModificationDate": 1746940430269,
+      "contentHash": "ececbbc77f74b1c2742e26eb95911ed7",
+      "sourceName": "@openzeppelin/contracts/token/ERC1155/IERC1155.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "viaIR": true,
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "cancun",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../utils/introspection/IERC165.sol"
+      ],
+      "versionPragmas": [
         "^0.8.20"
       ],
       "artifacts": [
-        "IERC20"
+        "IERC1155"
       ]
     },
-    "/home/joera/Documents/ethdam2025/contracts/sol/implementations/TFGroupFactory.sol": {
-      "lastModificationDate": 1746879997822,
-      "contentHash": "dc4260a50d00a0dceec5d71b2f47eec8",
+    "/home/joera/Documents/ethdam2025/custom-contracts/sol/circles/IDemurrage.sol": {
+      "lastModificationDate": 1746940143387,
+      "contentHash": "59ba0d738813d1668db1b1a5c6453ecb",
+      "sourceName": "sol/circles/IDemurrage.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "viaIR": true,
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "cancun",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.8.24"
+      ],
+      "artifacts": [
+        "IDemurrage"
+      ]
+    },
+    "/home/joera/Documents/ethdam2025/custom-contracts/sol/implementations/TrustedByFour.sol": {
+      "lastModificationDate": 1746948972290,
+      "contentHash": "acf436f7008061aa5a758564c81c3bb6",
+      "sourceName": "sol/implementations/TrustedByFour.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "viaIR": true,
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "cancun",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../circles/Core.sol",
+        "../membership-conditions/IMembershipCondition.sol",
+        "./TFGroup.sol"
+      ],
+      "versionPragmas": [
+        ">=0.8.28"
+      ],
+      "artifacts": [
+        "IsHumanAtLeastFourTrustsCondition"
+      ]
+    },
+    "/home/joera/Documents/ethdam2025/custom-contracts/sol/circles/Core.sol": {
+      "lastModificationDate": 1746939014825,
+      "contentHash": "571fbd1e89511ef2703c538a916dbc71",
+      "sourceName": "sol/circles/Core.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "viaIR": true,
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "cancun",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IHub.sol",
+        "./INameRegistry.sol",
+        "./IStandardTreasury.sol",
+        "../interfaces/IERC20Lift.sol"
+      ],
+      "versionPragmas": [
+        ">=0.8.28"
+      ],
+      "artifacts": [
+        "CirclesCoreAddresses",
+        "CirclesV2BetaAddresses"
+      ]
+    },
+    "/home/joera/Documents/ethdam2025/custom-contracts/sol/circles/INameRegistry.sol": {
+      "lastModificationDate": 1746939198713,
+      "contentHash": "44c7d576030616c9ac10059cfa574789",
+      "sourceName": "sol/circles/INameRegistry.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "viaIR": true,
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "cancun",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../names/INameRegistry.sol"
+      ],
+      "versionPragmas": [
+        ">=0.8.28"
+      ],
+      "artifacts": [
+        "INameRegistryExtended"
+      ]
+    },
+    "/home/joera/Documents/ethdam2025/custom-contracts/sol/circles/IStandardTreasury.sol": {
+      "lastModificationDate": 1746939046011,
+      "contentHash": "6c6b48331ff7ebf18ae1dcd0408a9065",
+      "sourceName": "sol/circles/IStandardTreasury.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "viaIR": true,
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "cancun",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.8.28"
+      ],
+      "artifacts": [
+        "IStandardTreasury"
+      ]
+    },
+    "/home/joera/Documents/ethdam2025/custom-contracts/sol/circles/IHub.sol": {
+      "lastModificationDate": 1746939085860,
+      "contentHash": "fb7f1e5863881d726d8279f5c4ff2fe5",
+      "sourceName": "sol/circles/IHub.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "viaIR": true,
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "cancun",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../hub/IHub.sol",
+        "../hub/TypeDefinitions.sol"
+      ],
+      "versionPragmas": [
+        ">=0.8.28"
+      ],
+      "artifacts": [
+        "IHub"
+      ]
+    },
+    "/home/joera/Documents/ethdam2025/custom-contracts/sol/interfaces/IERC20Lift.sol": {
+      "lastModificationDate": 1746939046033,
+      "contentHash": "4725f36c99c5a68a56c908ea1ddb89d8",
+      "sourceName": "sol/interfaces/IERC20Lift.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "viaIR": true,
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "cancun",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.8.24"
+      ],
+      "artifacts": [
+        "IERC20Lift"
+      ]
+    },
+    "/home/joera/Documents/ethdam2025/custom-contracts/sol/names/INameRegistry.sol": {
+      "lastModificationDate": 1746939187786,
+      "contentHash": "45beb217d101800a1badf40300785a61",
+      "sourceName": "sol/names/INameRegistry.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "viaIR": true,
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "cancun",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.8.24"
+      ],
+      "artifacts": [
+        "INameRegistry"
+      ]
+    },
+    "/home/joera/Documents/ethdam2025/custom-contracts/sol/implementations/CustomTreasury.sol": {
+      "lastModificationDate": 1746940946625,
+      "contentHash": "6f6000a44ba0e078b367e232cebe76b6",
+      "sourceName": "sol/implementations/CustomTreasury.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "viaIR": true,
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "cancun",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../base-group/BaseTreasury.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.28"
+      ],
+      "artifacts": [
+        "CustomTreasury"
+      ]
+    },
+    "/home/joera/Documents/ethdam2025/custom-contracts/sol/implementations/TFGroupFactory.sol": {
+      "lastModificationDate": 1746941184144,
+      "contentHash": "c056404009697e59f58c27525b676abe",
       "sourceName": "sol/implementations/TFGroupFactory.sol",
       "solcConfig": {
         "version": "0.8.28",
         "settings": {
+          "viaIR": true,
           "optimizer": {
             "enabled": true,
             "runs": 200

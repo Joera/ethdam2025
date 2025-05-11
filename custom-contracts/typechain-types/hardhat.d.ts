@@ -14,6 +14,10 @@ import * as Contracts from ".";
 declare module "hardhat/types/runtime" {
   interface HardhatEthersHelpers extends HardhatEthersHelpersBase {
     getContractFactory(
+      name: "IERC1155",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IERC1155__factory>;
+    getContractFactory(
       name: "IERC1155Receiver",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.IERC1155Receiver__factory>;
@@ -62,13 +66,69 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.IMembershipCondition__factory>;
     getContractFactory(
+      name: "BaseMintHandler",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.BaseMintHandler__factory>;
+    getContractFactory(
+      name: "BaseMintPolicy",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.BaseMintPolicy__factory>;
+    getContractFactory(
+      name: "BaseTreasury",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.BaseTreasury__factory>;
+    getContractFactory(
+      name: "IHub",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IHub__factory>;
+    getContractFactory(
+      name: "ILiftERC20",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.ILiftERC20__factory>;
+    getContractFactory(
+      name: "INameRegistry",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.INameRegistry__factory>;
+    getContractFactory(
       name: "Circle",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.Circle__factory>;
     getContractFactory(
+      name: "CirclesV2BetaAddresses",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.CirclesV2BetaAddresses__factory>;
+    getContractFactory(
+      name: "ICircles",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.ICircles__factory>;
+    getContractFactory(
+      name: "IDemurrage",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IDemurrage__factory>;
+    getContractFactory(
+      name: "IHub",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IHub__factory>;
+    getContractFactory(
+      name: "INameRegistryExtended",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.INameRegistryExtended__factory>;
+    getContractFactory(
+      name: "IStandardTreasury",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IStandardTreasury__factory>;
+    getContractFactory(
+      name: "IHubV2",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IHubV2__factory>;
+    getContractFactory(
       name: "CustomMintPolicy",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.CustomMintPolicy__factory>;
+    getContractFactory(
+      name: "CustomTreasury",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.CustomTreasury__factory>;
     getContractFactory(
       name: "TFGroup",
       signerOrOptions?: ethers.Signer | FactoryOptions
@@ -78,10 +138,31 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.TFGroupFactory__factory>;
     getContractFactory(
+      name: "IsHumanAtLeastFourTrustsCondition",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IsHumanAtLeastFourTrustsCondition__factory>;
+    getContractFactory(
       name: "ICircle",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.ICircle__factory>;
+    getContractFactory(
+      name: "IERC20Lift",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IERC20Lift__factory>;
+    getContractFactory(
+      name: "IMembershipCondition",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IMembershipCondition__factory>;
+    getContractFactory(
+      name: "INameRegistry",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.INameRegistry__factory>;
 
+    getContractAt(
+      name: "IERC1155",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IERC1155>;
     getContractAt(
       name: "IERC1155Receiver",
       address: string | ethers.Addressable,
@@ -143,15 +224,85 @@ declare module "hardhat/types/runtime" {
       signer?: ethers.Signer
     ): Promise<Contracts.IMembershipCondition>;
     getContractAt(
+      name: "BaseMintHandler",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.BaseMintHandler>;
+    getContractAt(
+      name: "BaseMintPolicy",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.BaseMintPolicy>;
+    getContractAt(
+      name: "BaseTreasury",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.BaseTreasury>;
+    getContractAt(
+      name: "IHub",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IHub>;
+    getContractAt(
+      name: "ILiftERC20",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.ILiftERC20>;
+    getContractAt(
+      name: "INameRegistry",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.INameRegistry>;
+    getContractAt(
       name: "Circle",
       address: string | ethers.Addressable,
       signer?: ethers.Signer
     ): Promise<Contracts.Circle>;
     getContractAt(
+      name: "CirclesV2BetaAddresses",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.CirclesV2BetaAddresses>;
+    getContractAt(
+      name: "ICircles",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.ICircles>;
+    getContractAt(
+      name: "IDemurrage",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IDemurrage>;
+    getContractAt(
+      name: "IHub",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IHub>;
+    getContractAt(
+      name: "INameRegistryExtended",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.INameRegistryExtended>;
+    getContractAt(
+      name: "IStandardTreasury",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IStandardTreasury>;
+    getContractAt(
+      name: "IHubV2",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IHubV2>;
+    getContractAt(
       name: "CustomMintPolicy",
       address: string | ethers.Addressable,
       signer?: ethers.Signer
     ): Promise<Contracts.CustomMintPolicy>;
+    getContractAt(
+      name: "CustomTreasury",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.CustomTreasury>;
     getContractAt(
       name: "TFGroup",
       address: string | ethers.Addressable,
@@ -163,11 +314,35 @@ declare module "hardhat/types/runtime" {
       signer?: ethers.Signer
     ): Promise<Contracts.TFGroupFactory>;
     getContractAt(
+      name: "IsHumanAtLeastFourTrustsCondition",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IsHumanAtLeastFourTrustsCondition>;
+    getContractAt(
       name: "ICircle",
       address: string | ethers.Addressable,
       signer?: ethers.Signer
     ): Promise<Contracts.ICircle>;
+    getContractAt(
+      name: "IERC20Lift",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IERC20Lift>;
+    getContractAt(
+      name: "IMembershipCondition",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IMembershipCondition>;
+    getContractAt(
+      name: "INameRegistry",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.INameRegistry>;
 
+    deployContract(
+      name: "IERC1155",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.IERC1155>;
     deployContract(
       name: "IERC1155Receiver",
       signerOrOptions?: ethers.Signer | DeployContractOptions
@@ -217,13 +392,69 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.IMembershipCondition>;
     deployContract(
+      name: "BaseMintHandler",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.BaseMintHandler>;
+    deployContract(
+      name: "BaseMintPolicy",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.BaseMintPolicy>;
+    deployContract(
+      name: "BaseTreasury",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.BaseTreasury>;
+    deployContract(
+      name: "IHub",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.IHub>;
+    deployContract(
+      name: "ILiftERC20",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.ILiftERC20>;
+    deployContract(
+      name: "INameRegistry",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.INameRegistry>;
+    deployContract(
       name: "Circle",
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.Circle>;
     deployContract(
+      name: "CirclesV2BetaAddresses",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.CirclesV2BetaAddresses>;
+    deployContract(
+      name: "ICircles",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.ICircles>;
+    deployContract(
+      name: "IDemurrage",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.IDemurrage>;
+    deployContract(
+      name: "IHub",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.IHub>;
+    deployContract(
+      name: "INameRegistryExtended",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.INameRegistryExtended>;
+    deployContract(
+      name: "IStandardTreasury",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.IStandardTreasury>;
+    deployContract(
+      name: "IHubV2",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.IHubV2>;
+    deployContract(
       name: "CustomMintPolicy",
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.CustomMintPolicy>;
+    deployContract(
+      name: "CustomTreasury",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.CustomTreasury>;
     deployContract(
       name: "TFGroup",
       signerOrOptions?: ethers.Signer | DeployContractOptions
@@ -233,10 +464,31 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.TFGroupFactory>;
     deployContract(
+      name: "IsHumanAtLeastFourTrustsCondition",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.IsHumanAtLeastFourTrustsCondition>;
+    deployContract(
       name: "ICircle",
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.ICircle>;
+    deployContract(
+      name: "IERC20Lift",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.IERC20Lift>;
+    deployContract(
+      name: "IMembershipCondition",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.IMembershipCondition>;
+    deployContract(
+      name: "INameRegistry",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.INameRegistry>;
 
+    deployContract(
+      name: "IERC1155",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.IERC1155>;
     deployContract(
       name: "IERC1155Receiver",
       args: any[],
@@ -298,15 +550,85 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.IMembershipCondition>;
     deployContract(
+      name: "BaseMintHandler",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.BaseMintHandler>;
+    deployContract(
+      name: "BaseMintPolicy",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.BaseMintPolicy>;
+    deployContract(
+      name: "BaseTreasury",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.BaseTreasury>;
+    deployContract(
+      name: "IHub",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.IHub>;
+    deployContract(
+      name: "ILiftERC20",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.ILiftERC20>;
+    deployContract(
+      name: "INameRegistry",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.INameRegistry>;
+    deployContract(
       name: "Circle",
       args: any[],
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.Circle>;
     deployContract(
+      name: "CirclesV2BetaAddresses",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.CirclesV2BetaAddresses>;
+    deployContract(
+      name: "ICircles",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.ICircles>;
+    deployContract(
+      name: "IDemurrage",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.IDemurrage>;
+    deployContract(
+      name: "IHub",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.IHub>;
+    deployContract(
+      name: "INameRegistryExtended",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.INameRegistryExtended>;
+    deployContract(
+      name: "IStandardTreasury",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.IStandardTreasury>;
+    deployContract(
+      name: "IHubV2",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.IHubV2>;
+    deployContract(
       name: "CustomMintPolicy",
       args: any[],
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.CustomMintPolicy>;
+    deployContract(
+      name: "CustomTreasury",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.CustomTreasury>;
     deployContract(
       name: "TFGroup",
       args: any[],
@@ -318,10 +640,30 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.TFGroupFactory>;
     deployContract(
+      name: "IsHumanAtLeastFourTrustsCondition",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.IsHumanAtLeastFourTrustsCondition>;
+    deployContract(
       name: "ICircle",
       args: any[],
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.ICircle>;
+    deployContract(
+      name: "IERC20Lift",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.IERC20Lift>;
+    deployContract(
+      name: "IMembershipCondition",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.IMembershipCondition>;
+    deployContract(
+      name: "INameRegistry",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.INameRegistry>;
 
     // default types
     getContractFactory(

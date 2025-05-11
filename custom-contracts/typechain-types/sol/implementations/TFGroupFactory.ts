@@ -3,6 +3,7 @@
 /* eslint-disable */
 import type {
   BaseContract,
+  BigNumberish,
   BytesLike,
   FunctionFragment,
   Result,
@@ -39,7 +40,12 @@ export interface TFGroupFactoryInterface extends Interface {
       AddressLike[],
       string,
       string,
-      BytesLike
+      BytesLike,
+      AddressLike,
+      AddressLike,
+      BigNumberish,
+      BigNumberish,
+      AddressLike
     ]
   ): string;
   encodeFunctionData(
@@ -134,7 +140,12 @@ export interface TFGroupFactory extends BaseContract {
       _initialConditions: AddressLike[],
       _name: string,
       _symbol: string,
-      _metadataDigest: BytesLike
+      _metadataDigest: BytesLike,
+      eureToken: AddressLike,
+      mintPolicy: AddressLike,
+      contributionAmount: BigNumberish,
+      payOutDay: BigNumberish,
+      stableCoinTokenAddress: AddressLike
     ],
     [
       [string, string, string] & {
@@ -167,7 +178,12 @@ export interface TFGroupFactory extends BaseContract {
       _initialConditions: AddressLike[],
       _name: string,
       _symbol: string,
-      _metadataDigest: BytesLike
+      _metadataDigest: BytesLike,
+      eureToken: AddressLike,
+      mintPolicy: AddressLike,
+      contributionAmount: BigNumberish,
+      payOutDay: BigNumberish,
+      stableCoinTokenAddress: AddressLike
     ],
     [
       [string, string, string] & {

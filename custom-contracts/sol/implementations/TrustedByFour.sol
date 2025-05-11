@@ -19,7 +19,7 @@ contract IsHumanAtLeastFourTrustsCondition is CirclesCoreAddresses, IMembershipC
         circlesCore = _circlesCore;
     }
 
-    function passesMembershipCondition(address _avatar) external view returns (bool) {
+    function passesMembershipCondition(address _avatar) external returns (bool) {
         // Get sponsors from TFGroup's trusted avatars
         address[] memory sponsors = TFGroup(msg.sender).getTrustedAvatars();
         // Only apply this condition when there are at least 4 sponsors

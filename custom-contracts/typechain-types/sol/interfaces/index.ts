@@ -2,3 +2,4 @@
 /* tslint:disable */
 /* eslint-disable */
 export type { ICircle } from "./ICircle";
+export type { IERC20Lift } from "./IERC20Lift";
