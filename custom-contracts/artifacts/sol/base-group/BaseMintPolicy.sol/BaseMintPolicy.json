@@ -1,0 +1,84 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "BaseMintPolicy",
+  "sourceName": "sol/base-group/BaseMintPolicy.sol",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes",
+          "name": "",
+          "type": "bytes"
+        }
+      ],
+      "name": "beforeBurnPolicy",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256[]",
+          "name": "",
+          "type": "uint256[]"
+        },
+        {
+          "internalType": "uint256[]",
+          "name": "",
+          "type": "uint256[]"
+        },
+        {
+          "internalType": "bytes",
+          "name": "",
+          "type": "bytes"
+        }
+      ],
+      "name": "beforeMintPolicy",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608080604052346015576101d9908161001a8239f35b5f80fdfe6080806040526004361015610012575f80fd5b5f3560e01c908163862038be146100ca575063b703825914610032575f80fd5b346100c65760a03660031901126100c65761004b610118565b5061005461012e565b5060443567ffffffffffffffff81116100c657610075903690600401610172565b505060643567ffffffffffffffff81116100c657610097903690600401610172565b505060843567ffffffffffffffff81116100c6576100b9903690600401610144565b5050602060405160018152f35b5f80fd5b346100c65760803660031901126100c6576100e3610118565b506100ec61012e565b506064359067ffffffffffffffff82116100c6576101106020923690600401610144565b505060018152f35b600435906001600160a01b03821682036100c657565b602435906001600160a01b03821682036100c657565b9181601f840112156100c65782359167ffffffffffffffff83116100c657602083818601950101116100c657565b9181601f840112156100c65782359167ffffffffffffffff83116100c6576020808501948460051b0101116100c65756fea2646970667358221220f6c9534af54b14d8afa60c244b9bc8370ebd30bf049f1a4f987e153def1746ab64736f6c634300081c0033",
+  "deployedBytecode": "0x6080806040526004361015610012575f80fd5b5f3560e01c908163862038be146100ca575063b703825914610032575f80fd5b346100c65760a03660031901126100c65761004b610118565b5061005461012e565b5060443567ffffffffffffffff81116100c657610075903690600401610172565b505060643567ffffffffffffffff81116100c657610097903690600401610172565b505060843567ffffffffffffffff81116100c6576100b9903690600401610144565b5050602060405160018152f35b5f80fd5b346100c65760803660031901126100c6576100e3610118565b506100ec61012e565b506064359067ffffffffffffffff82116100c6576101106020923690600401610144565b505060018152f35b600435906001600160a01b03821682036100c657565b602435906001600160a01b03821682036100c657565b9181601f840112156100c65782359167ffffffffffffffff83116100c657602083818601950101116100c657565b9181601f840112156100c65782359167ffffffffffffffff83116100c6576020808501948460051b0101116100c65756fea2646970667358221220f6c9534af54b14d8afa60c244b9bc8370ebd30bf049f1a4f987e153def1746ab64736f6c634300081c0033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}
