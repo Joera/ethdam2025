@@ -156,7 +156,7 @@ function beforeMintPolicy(
 }
 ```
 
-
+[Deployed contract](https://gnosisscan.io/address/0x274230EbcA7Aae91a655dd72c2B317F7615875c9#code)
 [View code](custom-contracts/sol/implementations/CustomMintPolicy.sol)
 
 ### Tracking contributions
