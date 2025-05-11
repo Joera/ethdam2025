@@ -1,5 +1,6 @@
-# contracts
-# node_modules
-# protocol/node_modules
-# lit/node_modules
-# frontend/node_modules
+circles-contracts-v2/
+circles-groups
+node_modules
+protocol/node_modules
+lit/node_modules
+frontend/node_modules

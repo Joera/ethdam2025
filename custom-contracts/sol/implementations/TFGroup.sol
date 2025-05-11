@@ -9,13 +9,11 @@ import {INameRegistry} from "../base-group/interfaces/INameRegistry.sol";
 import {IMembershipCondition} from "../membership-conditions/IMembershipCondition.sol";
 import {IERC20} from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import {CustomMintPolicy} from "./CustomMintPolicy.sol";
-import "@chainlink/contracts/src/v0.8/automation/AutomationCompatibleInterface.sol";
-
 /// @title TFGroup
 /// @notice A base contract for Circles Hub v2 group creation and membership management.
 /// @dev This contract allows the deployment of a treasury, setup of minting policy/handler,
 ///      and management of membership conditions for group-based trust relationships.
-contract TFGroup is AutomationCompatibleInterface {
+contract TFGroup {
     // =================================================
     //                       ERRORS
     // =================================================
@@ -338,7 +336,7 @@ contract TFGroup is AutomationCompatibleInterface {
     /// @notice Check if upkeep is needed
     /// @return upkeepNeeded boolean to indicate whether upkeep is needed
     /// @return performData bytes data to be used in performUpkeep
-    function checkUpkeep(bytes calldata) external view override returns (bool upkeepNeeded, bytes memory) {
+    function checkUpkeep(bytes calldata) external view returns (bool upkeepNeeded, bytes memory) {
         // Get current timestamp
         uint256 currentTimestamp = block.timestamp;
 
@@ -359,7 +357,7 @@ contract TFGroup is AutomationCompatibleInterface {
     }
 
     /// @notice Perform the upkeep - trigger monthly payout
-    function performUpkeep(bytes calldata) external override {
+    function performUpkeep(bytes calldata) external {
         uint256 currentTimestamp = block.timestamp;
         (, , uint day) = timestampToDate(currentTimestamp);
         require(day == PAYOUT_DAY, "Not the payout day");

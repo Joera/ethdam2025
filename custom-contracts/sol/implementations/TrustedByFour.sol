@@ -28,7 +28,7 @@ contract IsHumanAtLeastFourTrustsCondition is CirclesCoreAddresses, IMembershipC
         }
         uint256 count = 0;
         for (uint256 i = 0; i < sponsors.length; i++) {
-            if (hub.isTrusted(sponsors[i], _avatar)) {
+            if (circlesCore.hub.isTrusted(sponsors[i], _avatar)) {
                 count++;
                 if (count >= 4) return true;
             }
