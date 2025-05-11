@@ -1,0 +1,41 @@
+
+:global(form) {
+
+    font-family: "Operator Mono A", "Operator Mono B";
+    font-style: normal;
+    font-weight: 500;
+
+    :global(input) {
+        padding: .75rem 1.5rem;
+        min-width: 220px;
+        width: calc(100% - 3rem);
+        border-radius: 24px;
+        border: 1px rgb(80, 77, 77) solid;
+        font-family: "Operator Mono A", "Operator Mono B";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.125rem;
+        margin: 1.5rem 0;
+    }
+
+    :global(textarea) {
+        border: none;
+        border: 1px white solid;
+        padding: .75rem 1.5rem;
+        min-width: 220px;
+        width: calc(100% - 3rem);
+        line-height: 1.35;
+        border-radius: 24px;
+        font-family: "Operator Mono A", "Operator Mono B";
+        font-style: normal;
+        font-weight: 500;    
+        font-size: 1.125rem;    
+    }
+
+    :global(select) {
+        font-size: 1.125rem;
+        font-family: "Operator Mono A", "Operator Mono B";
+        font-style: normal;
+        font-weight: 500;
+    }
+}               

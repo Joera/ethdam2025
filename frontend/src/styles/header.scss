@@ -1,0 +1,92 @@
+header {
+    // border-bottom: 1px solid black;\
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 6rem;
+    line-height: 6rem;
+
+    .container {
+        display: flex;
+        position: relative;
+        align-items: center;
+        justify-content: space-between;
+        height: 1.5rem;
+        width: 100%;
+
+        @media screen and (min-width: 1280px) {
+            width: 1280px;
+            flex-direction: row;
+        }
+
+        h1 {
+            font-size: 1.125rem;
+
+            a {
+                color: black;
+                text-decoration: none;
+
+                &:hover {
+                    border-bottom: 1px solid;
+                }
+            }
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            height: 100%;
+            padding-left: 0;
+           
+        }
+
+        li {
+
+            padding: 0 0.25rem;
+            border-left: 1px solid black;
+
+            @media screen and (min-width: 1280px) {
+                padding: 0 0.75rem;
+            }
+
+            &:first-child {
+                border-left: none;
+            }
+
+            a {
+                display: block;
+                border: none;
+                text-decoration: none;
+                color: black;
+                line-height: 1;
+                font-family: "Gotham A", "Gotham B";
+                font-style: normal;
+                font-weight: 700;
+                font-size: 1rem;
+                line-height: 1;
+                text-transform: uppercase;
+                padding: .25rem .25rem;
+
+                &:hover {
+                    border-bottom: 1px solid;
+                }
+            }
+
+            button {
+                display: block;
+                border: none;
+                letter-spacing: 0px;
+
+                span {
+                    @include mono;
+                    text-transform: lowercase;
+                    letter-spacing: 0px;
+                    margin-top: -3px;
+                    display: block;
+                }
+            }
+        }
+    }
+}

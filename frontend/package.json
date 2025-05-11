@@ -12,9 +12,19 @@
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
 	},
 	"devDependencies": {
+		"@circles-sdk/adapter-ethers": "^0.14.0",
+		"@circles-sdk/adapter-safe": "^0.14.0",
+		"@circles-sdk/data": "^0.14.0",
+		"@circles-sdk/profiles": "^0.14.0",
+		"@circles-sdk/sdk": "^0.14.0",
+		"@circles-sdk/utils": "^0.14.0",
+		"@safe-global/api-kit": "^2.5.4",
+		"@safe-global/relay-kit": "^3.2.4",
+		"@safe-global/safe-core-sdk-types": "^5.1.0",
 		"@sveltejs/adapter-auto": "^6.0.0",
 		"@sveltejs/kit": "^2.16.0",
 		"@sveltejs/vite-plugin-svelte": "^5.0.0",
+		"sass-embedded": "^1.87.0",
 		"svelte": "^5.0.0",
 		"svelte-check": "^4.0.0",
 		"typescript": "^5.0.0",
@@ -23,6 +33,16 @@
 	"pnpm": {
 		"onlyBuiltDependencies": [
 			"esbuild"
-		]
+		],
+		"overrides": {
+			"axios": "1.6.2"
+		}
+	},
+	"dependencies": {
+		"@safe-global/relay-kit": "3.2.4",
+		"@sveltejs/adapter-node": "^5.2.12",
+		"axios": "1.6.2",
+		"ethers": "^6.14.0",
+		"vite-plugin-node-stdlib-browser": "^0.2.1"
 	}
 }

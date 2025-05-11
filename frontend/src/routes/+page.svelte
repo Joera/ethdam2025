@@ -1,2 +1,32 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+<script lang="ts">
+    import GroupList from '$lib/components/GroupList.svelte';
+    import Profile from '$lib/components/Profile.svelte';
+    import { onMount } from 'svelte';
+    import { writable, type Writable } from 'svelte/store';
+
+
+
+    onMount(async () => {
+       
+    })
+
+</script>
+
+
+ 
+
+        <Profile />
+
+
+        <GroupList />
+
+
+
+
+
+
+  
+
+<style>
+
+</style>

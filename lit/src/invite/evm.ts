@@ -1,12 +1,11 @@
-import { ALCHEMY_KEY } from "../constants";
 
 
 const evmSetup = (contractAddress: string, publicationAbi: any) => {
 
     const provider = new ethers.providers.JsonRpcProvider({
-        url: `https://base-sepolia.g.alchemy.com/v2/${ALCHEMY_KEY}`,
-        chainId: 84532,
-        name: "Base Sepolia"
+        url: `https://rpc.gnosischain.com`,
+        chainId: 100,
+        name: "Gnosis"
     });
     
     const contract = new ethers.Contract(contractAddress, publicationAbi, provider);
@@ -21,8 +20,6 @@ export const evmWrite = async (
     publicationAbi: any,
     method: string,
     args: any[],
-    index: number,
-    confirm: boolean = true
 
 ) => {
    
@@ -51,10 +48,6 @@ export const evmWrite = async (
     
     const unsignedTx = ethers.utils.serializeTransaction(tx);
     const msgHash = ethers.utils.keccak256(unsignedTx);
-
-    // console.log("msgHash", msgHash);
-
-    // console.log(pkpPublicKey);
 
     const signature = await Lit.Actions.signAndCombineEcdsa({
 

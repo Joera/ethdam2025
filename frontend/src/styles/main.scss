@@ -1,0 +1,21 @@
+@use "./styleguide/typography.scss" as *;
+@use "./styleguide/colours.scss" as *;
+
+:global(body) {
+    
+    @include mono;
+    font-size: 1.125rem;
+    line-height: 1.65;
+    transition: opacity 1s;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    // background: rgb(253,205,45);
+    background: white;
+    p {
+      margin: 0 0 1.5rem 0;
+    }
+  }
+
+
+ 

@@ -21,7 +21,6 @@ import { OperationType } from "@safe-global/safe-core-sdk-types";
 dotenv.config();
 
 const INVITE_ACTION_HASH = process.env.INVITE_ACTION_HASH!;
-const TX_SERVICE_URL = 'https://safe-transaction-base-sepolia.safe.global';
 
 async function main() {
     

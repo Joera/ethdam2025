@@ -1,0 +1,42 @@
+:global(.address_container) {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    :global(label) {
+        font-size: 1.275rem;
+        
+    }
+
+}
+
+:global(.address) {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: .75rem;
+    margin-top: .25rem;
+    color: black;
+    cursor: pointer;
+
+    font-family: "Operator Mono A", "Operator Mono B";
+    font-style: normal;
+    font-weight: 500;
+    // font-size: 1.275rem;
+    letter-spacing: 1px;
+    min-width: 260px;
+
+    :global(span) {
+        display: block;
+        margin: 0 0 0 .5rem;
+    }
+
+    :global(a) {
+        color: black;
+        text-decoration: none;
+        padding: .125rem 0;
+        border-bottom: 3px solid black;
+    }
+}

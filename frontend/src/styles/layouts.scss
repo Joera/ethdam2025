@@ -1,0 +1,91 @@
+@use './styleguide/colours.scss' as *;
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: "Gotham A", "Gotham B";
+    font-style: normal;
+    font-weight: 400;
+    // padding-bottom: 4rem;
+   
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center; 
+    width: 100vw;
+    // padding-top: 6rem;
+}
+
+:global(.centered) {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+:global(.scrolltainer) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    height: 100%;
+    overflow-y: auto;
+    width: 300px;
+    margin: 0rem 0 0 0;
+    height: calc(100% - 4rem);
+}
+
+.container {
+
+    width: 100%;
+    display: flex;
+    max-width: 475px
+
+    // @media screen and (min-width: 820px) {
+    //     width: 860px;
+    // }
+}
+
+section.container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+nav.container {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-aligned {
+
+    align-items: flex-start;
+    width: calc(100% - 2rem);
+    padding: 0 1rem;
+
+    @media screen and (min-width: 820px) {
+        width: 860px;
+    }
+
+
+    h2 {
+        margin: 3rem 0 0 0;
+    }
+}
+
+
+
+
+

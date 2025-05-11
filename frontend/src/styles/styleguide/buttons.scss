@@ -1,0 +1,93 @@
+@use './colours.scss' as *;
+
+:global(button) {
+    all: unset; /* Resets all inherited properties */
+    display: inline-block; /* Make sure the button is displayed as an inline block */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    border: none; /* Remove borders */
+    background: none; /* Remove background */
+    font: inherit; /* Use the same font as the surrounding text */
+    text-align: center; /* Center text */
+    color: inherit; /* Inherit text color */
+    cursor: pointer; /* Ensure it shows the pointer cursor */
+    line-height: normal; /* Fix for different default line heights */
+
+    // &:hover {
+    //   background: black;
+    //   color: $lime;
+    // }
+    &:focus {
+      outline: none; /* Remove default focus outline */
+    }
+    &::-moz-focus-inner {
+      border: 0; /* Remove inner focus border in Firefox */
+    }
+
+    background: black;
+    color: white;
+    padding: 0 .75rem;
+    line-height: 2;
+}
+
+
+:global(.button) {
+
+  font-family: "Gotham A", "Gotham B";
+  font-style: normal;
+  font-weight: 700;
+  font-size: .875rem;
+  line-height: 1;
+  text-transform: uppercase;
+  border: 2px solid #000;
+  padding: 0.6rem 0.4rem;
+}
+
+:global(.pill) {
+
+  padding: 0.6rem 1rem;
+  border: none;
+  background: black;
+  color: white;
+  border-radius: 20px;
+  text-transform: lowercase;
+  font-size: 1rem;
+  box-shadow: 0 4px 10px 2px rgba(0, 0, 0, 0.2);
+}
+
+:global(.pill.narrow) {
+
+  padding: 0.6rem .6rem;
+
+}
+
+:global(.pill.white) {
+
+
+  background: white;
+  color: black;
+
+}
+
+:global(.icon) {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  :global(svg) {
+    width: 2.8rem;
+    height: 2.8rem;
+  }
+
+  &:hover {
+    background: transparent;
+    
+  }
+}
+
+
+.button {
+    padding: .5rem 1rem;
+}
+  
