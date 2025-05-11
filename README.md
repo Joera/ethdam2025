@@ -88,7 +88,7 @@ function passesMembershipCondition(address _avatar) external view returns (bool)
 }
 ```
 
-contracts/sol/implementations/TrustedByFour.sol
+[View code](contracts/sol/implementations/TrustedByFour.sol)
 
 ### Making the contribution
 
