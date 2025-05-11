@@ -187,6 +187,7 @@ function triggerPayout() external onlyOwnerOrService returns (bool) {
 	return true;
 }
 ```
+[View code](custom-contracts/sol/implementations/TFGroup.sol)
 
 expand on logic ..... 
 
