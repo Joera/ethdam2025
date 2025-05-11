@@ -163,7 +163,7 @@ Link: contracts/sol/implementations/CustomMintPolicy.sol
 
 Frontend / TrustFund webapp can display number of contributions made and total amount contributed. See frontend/src/lib/factory/track_contributions.ts
 
-by time!
+Contributions are stored in the group contract and can be retrieved using the getMinterHistory method. MAybe show abi of other related ethods ... 
 
 
 ### Payouts
@@ -188,10 +188,10 @@ function triggerPayout() external onlyOwnerOrService returns (bool) {
 }
 ```
 
-
-
-
+expand on logic ..... 
 
 
 
 ### Exit 
+
+to do ......

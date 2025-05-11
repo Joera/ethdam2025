@@ -9,13 +9,13 @@ import {INameRegistry} from "../base-group/interfaces/INameRegistry.sol";
 import {IMembershipCondition} from "../membership-conditions/IMembershipCondition.sol";
 import {IERC20} from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import {CustomMintPolicy} from "./CustomMintPolicy.sol";
-import {AutomationCompatible2_0} from "@chainlink/contracts/src/v0.8/automation/AutomationCompatible.sol";
+import "@chainlink/contracts/src/v0.8/automation/AutomationCompatibleInterface.sol";
 
 /// @title TFGroup
 /// @notice A base contract for Circles Hub v2 group creation and membership management.
 /// @dev This contract allows the deployment of a treasury, setup of minting policy/handler,
 ///      and management of membership conditions for group-based trust relationships.
-contract TFGroup is AutomationCompatible2_0 {
+contract TFGroup is AutomationCompatibleInterface {
     // =================================================
     //                       ERRORS
     // =================================================
