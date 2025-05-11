@@ -1,14 +1,14 @@
-// // SPDX-License-Identifier: AGPL-3.0-only
-// pragma solidity ^0.8.28;
+// SPDX-License-Identifier: AGPL-3.0-only
+pragma solidity ^0.8.28;
 
-// import "../../circles-groups/src/base-group/BaseTreasury.sol";
+import "../base-group/BaseTreasury.sol";
 
-// /**
-//  * @title CustomTreasury
-//  * @notice An extended implementation of BaseTreasury with additional features
-//  * @dev Adds collateral tracking, emergency withdrawal, and ownership functionality
-//  */
-// contract CustomTreasury is BaseTreasury {
+/**
+ * @title CustomTreasury
+ * @notice An extended implementation of BaseTreasury with additional features
+ * @dev Adds collateral tracking, emergency withdrawal, and ownership functionality
+ */
+contract CustomTreasury is BaseTreasury {
 //     // =================================================
 //     //                     EVENTS
 //     // =================================================

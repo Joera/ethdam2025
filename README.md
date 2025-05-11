@@ -1,11 +1,11 @@
 # TrustFund for EthDam2025 and Circles
 
 
-### Visual overview of main functionality
+### Visual overview of main functionalities
 
 ![Overview](./trustfund.excalidraw.png)
 
-For many of the design choices covered in the presentation we propose technical solutions in this document. 
+For many of the design choices covered in the presentation we can propose technical solutions: 
 
 ### Ownership
 
