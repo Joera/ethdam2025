@@ -196,3 +196,8 @@ expand on logic .....
 ### Exit 
 
 to do ......
+
+
+### Factory
+
+[Deployed factory to create trustfunds](https://gnosisscan.io/address/0x274230EbcA7Aae91a655dd72c2B317F7615875c9#code)
