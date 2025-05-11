@@ -35,9 +35,9 @@ Conditions:
 }
 ```
 
-Mint PKP: protocol/scripts/pkp-mint.ts
-Lit Action Code: lit/src/invite
-Run action: lit/scripts/run-action.ts
+[Mint PKP](protocol/scripts/pkp-mint.ts)
+[Lit Action Code](lit/src/invite)
+[Run action](lit/scripts/run-action.ts)
 
 ### Payment authorization
 
@@ -60,7 +60,7 @@ export const approveStablecoinTransfer = async (userAddress: string, contributio
 }
 ```
 
-Link: frontend/src/lib/factory/authorize_payments.ts
+[View code](frontend/src/lib/factory/authorize_payments.ts)
 
 ### Additional membershipConditions
 

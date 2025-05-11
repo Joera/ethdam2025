@@ -9,94 +9,107 @@ import "../base-group/BaseTreasury.sol";
  * @dev Adds collateral tracking, emergency withdrawal, and ownership functionality
  */
 contract CustomTreasury is BaseTreasury {
-//     // =================================================
-//     //                     EVENTS
-//     // =================================================
-//     event CollateralTracked(uint256 indexed tokenId, uint256 amount);
+    // =================================================
+    //                     EVENTS
+    // =================================================
 
-//     // =================================================
-//     //                     ERRORS
-//     // =================================================
-//     error InvalidAmount();
+    event CollateralDeposited(address indexed depositor, uint256 amount);
+    event CollateralWithdrawn(address indexed withdrawer, uint256 amount);
+    event EmergencyWithdrawal(address indexed recipient, uint256 amount);
 
-//     // =================================================
-//     //                  STATE VARIABLES
-//     // =================================================
-    
-//     // Mapping to track collateral balances by token ID
-//     mapping(uint256 => uint256) public collateralBalances;
-    
+    // =================================================
+    //                     ERRORS
+    // =================================================
 
-//     /**
-//      * @notice Constructor to initialize the CustomTreasury
-//      * @param hub The address of the Circles Hub contract
-//      * @param nameRegistry The address of the name registry contract
-//      * @param group The address of the associated group
-//      */
-//     constructor(
-//         IHub hub,
-//         INameRegistry nameRegistry,
-//         address group
-//     ) BaseTreasury(hub, nameRegistry, group) {}
+    error InsufficientCollateral();
+    error WithdrawalFailed();
+    error TransferFailed();
 
-//     /**
-//      * @notice Override of onERC1155Received to add collateral tracking
-//      * @dev Adds balance tracking on top of base implementation
-//      */
-//     function onERC1155Received(
-//         address operator,
-//         address from,
-//         uint256 id,
-//         uint256 amount,
-//         bytes calldata data
-//     ) public virtual override returns (bytes4) {
-//         // Call parent implementation first
-//         bytes4 result = super.onERC1155Received(operator, from, id, amount, data);
-        
-//         // Track the collateral
-//         _trackCollateral(id, amount);
-        
-//         return result;
-//     }
+    // =================================================
+    //                     STORAGE
+    // =================================================
 
-//     /**
-//      * @notice Override of onERC1155BatchReceived to add collateral tracking
-//      * @dev Adds balance tracking on top of base implementation
-//      */
-//     function onERC1155BatchReceived(
-//         address operator,
-//         address from,
-//         uint256[] calldata ids,
-//         uint256[] calldata amounts,
-//         bytes calldata data
-//     ) public virtual override returns (bytes4) {
-//         // Call parent implementation first
-//         bytes4 result = super.onERC1155BatchReceived(operator, from, ids, amounts, data);
-        
-//         // Track all collateral
-//         for (uint256 i = 0; i < ids.length; i++) {
-//             _trackCollateral(ids[i], amounts[i]);
-//         }
-        
-//         return result;
-//     }
+    /// @notice Mapping of addresses to their collateral amounts
+    mapping(address => uint256) public collateralBalances;
 
-//     /**
-//      * @notice Internal function to track collateral balances
-//      * @param tokenId The ID of the token to track
-//      * @param amount The amount to add to tracking
-//      */
-//     function _trackCollateral(uint256 tokenId, uint256 amount) internal {
-//         collateralBalances[tokenId] += amount;
-//         emit CollateralTracked(tokenId, amount);
-//     }
+    /// @notice Total collateral held by the treasury
+    uint256 public totalCollateral;
 
-//     /**
-//      * @notice View function to get collateral balance for a token
-//      * @param tokenId The ID of the token to check
-//      * @return The balance of the specified token
-//      */
-//     function getCollateralBalance(uint256 tokenId) external view returns (uint256) {
-//         return collateralBalances[tokenId];
-//     }
-// }
+    /// @notice Address of the owner
+    address public owner;
+
+    // =================================================
+    //                  CONSTRUCTOR
+    // =================================================
+
+    constructor(
+        address _owner,
+        address _hub,
+        address _nameRegistry,
+        address _group,
+        string memory _groupName,
+        bytes32 _metadataDigest
+    ) BaseTreasury(_hub, _nameRegistry, _group, _groupName, _metadataDigest) {
+        owner = _owner;
+    }
+
+    // =================================================
+    //                   MODIFIERS
+    // =================================================
+
+    modifier onlyOwner() {
+        require(msg.sender == owner, "Not owner");
+        _;
+    }
+
+    // =================================================
+    //                PUBLIC FUNCTIONS
+    // =================================================
+
+    /// @notice Deposit collateral into the treasury
+    /// @dev Collateral is tracked per depositor
+    function depositCollateral() external payable {
+        collateralBalances[msg.sender] += msg.value;
+        totalCollateral += msg.value;
+        emit CollateralDeposited(msg.sender, msg.value);
+    }
+
+    /// @notice Withdraw collateral from the treasury
+    /// @param _amount Amount of collateral to withdraw
+    function withdrawCollateral(uint256 _amount) external {
+        if (collateralBalances[msg.sender] < _amount) {
+            revert InsufficientCollateral();
+        }
+
+        collateralBalances[msg.sender] -= _amount;
+        totalCollateral -= _amount;
+
+        (bool success, ) = msg.sender.call{value: _amount}("");
+        if (!success) revert WithdrawalFailed();
+
+        emit CollateralWithdrawn(msg.sender, _amount);
+    }
+
+    /// @notice Emergency withdrawal of all funds to a specified address
+    /// @param _recipient Address to receive the funds
+    /// @dev Only callable by owner
+    function emergencyWithdraw(address _recipient) external onlyOwner {
+        uint256 balance = address(this).balance;
+        (bool success, ) = _recipient.call{value: balance}("");
+        if (!success) revert TransferFailed();
+        emit EmergencyWithdrawal(_recipient, balance);
+    }
+
+    /// @notice Change the owner address
+    /// @param _newOwner New owner address
+    function setOwner(address _newOwner) external onlyOwner {
+        owner = _newOwner;
+    }
+
+    /// @notice Get the collateral balance of an address
+    /// @param _address Address to check
+    /// @return uint256 Collateral balance
+    function getCollateralBalance(address _address) external view returns (uint256) {
+        return collateralBalances[_address];
+    }
+}

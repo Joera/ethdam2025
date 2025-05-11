@@ -58,6 +58,8 @@ contract TFGroupFactory {
         bytes32 _metadataDigest,
 
         // custom parameters specfic to instance of the trustfund  
+        address eureToken, // address of the EURE token contract
+        address mintPolicy, // address of the custom mint policy contract
         uint96 contributionAmount, // amount to contributed each month
         uint8 payOutDay, // on which day of the month payouts happen
         address stableCoinTokenAddress // stablecoin to use for contributions and payments
@@ -67,7 +69,7 @@ contract TFGroupFactory {
         if (bytes(_name).length > 19) revert MaxNameLength19();
         // create Base Group itself
         TFGroup tfGroup =
-            new TFGroup(_owner, _service, _feeCollection, _customMintPolicy, _initialConditions, _name, _symbol, _metadataDigest, contributionAmount, payOutDay, stableCoinTokenAddress);
+            new TFGroup(_owner, _service, _feeCollection, _customMintPolicy, _initialConditions, _name, _symbol, _metadataDigest, eureToken, mintPolicy, contributionAmount, payOutDay, stableCoinTokenAddress);
 
         group = address(tfGroup);
         mintHandler = address(tfGroup.BASE_MINT_HANDLER());

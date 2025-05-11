@@ -341,7 +341,7 @@ contract TFGroup {
         uint256 currentTimestamp = block.timestamp;
 
         // Convert to day of month
-        (uint year, uint month, uint day) = timestampToDate(currentTimestamp);
+        (, , uint day) = timestampToDate(currentTimestamp);
 
         // Only trigger on specified payout day of the month
         if (day != PAYOUT_DAY) {
